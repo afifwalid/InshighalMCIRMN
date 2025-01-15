@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واجهة تقديم الانشغالات</title>
+    <style>
+        /* نفس التنسيقات الموجودة */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            direction: rtl;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 10px;
+        }
+        header h1, header h2, header h3 {
+            margin: 5px 0;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .success-message {
+            display: none;
+            color: green;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>الجمهورية الجزائرية الديمقراطية الشعبية</h1>
+        <h2>وزارة التجارة الخارجية وضبط السوق الوطنية</h2>
+        <h3>المديرية العامة للرقابة الاقتصادية وقمع الغش</h3>
+        <p>مرحبا، قدم انشغالك</p>
+    </header>
+    <form action="https://formspree.io/f/xbllbyny" method="POST" enctype="multipart/form-data">
+        <label for="fullName">الاسم واللقب:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك ولقبك" required>
+    
+        <label for="phone">رقم الهاتف:</label>
+        <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك" required>
+    
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+    
+        <label for="state">الولاية:</label>
+        <select id="state" name="state" required>
+            <option value="">اختر ولايتك</option>
+            <option value="الجزائر">الجزائر</option>
+            <option value="وهران">وهران</option>
+            <option value="سطيف">سطيف</option>
+        </select>
+    
+        <label for="municipality">البلدية:</label>
+        <input type="text" id="municipality" name="municipality" placeholder="أدخل بلديتك" required>
+    
+        <label for="merchantName">اسم التاجر:</label>
+        <input type="text" id="merchantName" name="merchantName" placeholder="أدخل اسم التاجر" required>
+    
+        <label for="merchantAddress">عنوان التاجر:</label>
+        <input type="text" id="merchantAddress" name="merchantAddress" placeholder="رقم المحل، الشارع، البلدية" required>
+    
+        <label for="merchantActivity">تخصص نشاط التاجر:</label>
+        <input type="text" id="merchantActivity" name="merchantActivity" placeholder="أدخل تخصص النشاط (مواد غذائية، خضر وفواكه، جزار...)" required>
+    
+        <label for="description">وصف الانشغال:</label>
+        <textarea id="description" name="description" placeholder="اكتب وصفًا دقيقًا للانشغال" rows="5" required></textarea>
+    
+        <label for="image">تحميل صورة (اختياري):</label>
+        <input type="file" id="image" name="image" accept="image/*">
+    
+        <button type="submit">إرسال</button>
+    </form>
+    <p class="success-message" id="successMessage">تم الإرسال بنجاح، ستنظر مصالحي في انشغالك</p>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
