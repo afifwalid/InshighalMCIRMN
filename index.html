@@ -82,6 +82,13 @@
         <h3>المديرية العامة للرقابة الاقتصادية وقمع الغش</h3>
         <p>مرحبا، قدم انشغالك</p>
     </header>
+    <div id="loginForm">
+        <h3>تسجيل الدخول</h3>
+        <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required>
+        <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
+        <button onclick="login()">دخول</button>
+        <p id="loginError" style="color:red;"></p>
+    </div>
     <form action="https://formspree.io/f/mdkkjljq" method="POST" enctype="multipart/form-data">
         <label for="fullName">الاسم واللقب:</label>
         <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك ولقبك" required>
@@ -153,6 +160,7 @@
             <option value="56">جانت</option>
             <option value="57">المغير</option>
             <option value="58">المنيعة</option><option         </select>
+        <form id="reportForm" style="display:none;" action="https://formspree.io/f/mdkkjljq" method="POST" enctype="multipart/form-data">       
     
         <label for="municipality">البلدية:</label>
         <input type="text" id="municipality" name="municipality" placeholder="أدخل بلديتك" required>
